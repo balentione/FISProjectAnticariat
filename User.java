@@ -12,6 +12,8 @@ public class User {
     private String email;
     private String phone;
 
+    public static String last_username;
+
     public User(String username, String password, String role, String first_name, String last_name, String email, String phone) {
         this.username = username;
         this.password = password;
@@ -24,6 +26,14 @@ public class User {
 
     public User(){
 
+    }
+
+    public static String getLast_username() {
+        return last_username;
+    }
+
+    public static void setLast_username(String last_username) {
+        User.last_username = last_username;
     }
 
     public String getUsername() {
@@ -48,6 +58,38 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
