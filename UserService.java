@@ -1,10 +1,13 @@
 package org.loose.fis.sre.services;
 
 import org.dizitart.no2.Nitrite;
+import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.sre.exceptions.PublishBookException;
 import org.loose.fis.sre.exceptions.SignUpException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.WrongCredentialsException;
+import org.loose.fis.sre.model.PublishedBooks;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -18,17 +21,37 @@ public class UserService {
 
     private static ObjectRepository<User> userRepository;
 
+    public static ObjectRepository<PublishedBooks> getBooksRepository() {
+        return booksRepository;
+    }
+
+    private static ObjectRepository<PublishedBooks> booksRepository;
+
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("registration-example.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository = database.getRepository(User.class);
+        booksRepository = database.getRepository(PublishedBooks.class);
     }
 
     public static void addUser(String username, String password, String role, String first_name, String last_name, String email, String phone) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
         userRepository.insert(new User(username, encodePassword(username, password), role, first_name, last_name, email, phone));
+    }
+
+    public static void addBook(String username, String category, String title, String author, String number_pag, String condition){
+        booksRepository.insert(new PublishedBooks(username, category, title, author, number_pag, condition));
+    }
+
+    public static void deleteBook(PublishedBooks publishedBook){
+        booksRepository.remove(publishedBook);
+    }
+
+    public static void checkFilledInformationsPublishBook(String category, String title, String author, String number_pag, String condition) throws PublishBookException {
+        if (category.isEmpty() || title.isEmpty() || author.isEmpty() || number_pag.isEmpty() || condition.isEmpty())
+            throw new PublishBookException(category,title,author,number_pag,condition);
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
@@ -50,7 +73,7 @@ public class UserService {
             throw new WrongCredentialsException(username,password,role);
     }
 
-    public static void checkFilledInformations(String username, String password, String role, String first_name, String last_name, String email, String phone) throws SignUpException {
+    public static void checkFilledInformationsSignUp(String username, String password, String role, String first_name, String last_name, String email, String phone) throws SignUpException {
         if (username.isEmpty() || password.isEmpty() || role.isEmpty() || first_name.isEmpty() || last_name.isEmpty() ||email.isEmpty() || phone.isEmpty())
             throw new SignUpException(username,password,role,first_name,last_name,email,phone);
     }
