@@ -53,7 +53,7 @@ public class SignUpController{
     @FXML
     private void handleSignUp() throws IOException{
         try {
-            UserService.checkFilledInformations(tf_username.getText(), tf_password.getText(), (String) role.getValue(),tf_firstname.getText(), tf_lastname.getText(),tf_email.getText(),tf_phone.getText());
+            UserService.checkFilledInformationsSignUp(tf_username.getText(), tf_password.getText(), (String) role.getValue(),tf_firstname.getText(), tf_lastname.getText(),tf_email.getText(),tf_phone.getText());
             UserService.addUser(tf_username.getText(), tf_password.getText(), (String) role.getValue(),tf_firstname.getText(), tf_lastname.getText(),tf_email.getText(),tf_phone.getText());
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
