@@ -7,7 +7,9 @@ import org.loose.fis.sre.exceptions.PublishBookException;
 import org.loose.fis.sre.exceptions.SignUpException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.exceptions.WrongCredentialsException;
+import org.loose.fis.sre.model.BooksWithOffer;
 import org.loose.fis.sre.model.PublishedBooks;
+import org.loose.fis.sre.model.SelledBooks;
 import org.loose.fis.sre.model.User;
 
 import java.nio.charset.StandardCharsets;
@@ -27,6 +29,18 @@ public class UserService {
 
     private static ObjectRepository<PublishedBooks> booksRepository;
 
+    private static ObjectRepository<BooksWithOffer> booksWithOfferRepository;
+
+    public static ObjectRepository<BooksWithOffer> getBooksWithOfferRepository() {
+        return booksWithOfferRepository;
+    }
+
+    private static ObjectRepository<SelledBooks> selledBooksRepository;
+
+    public static ObjectRepository<SelledBooks> getSelledBooksRepository() {
+        return selledBooksRepository;
+    }
+
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("registration-example.db").toFile())
@@ -34,6 +48,8 @@ public class UserService {
 
         userRepository = database.getRepository(User.class);
         booksRepository = database.getRepository(PublishedBooks.class);
+        booksWithOfferRepository = database.getRepository(BooksWithOffer.class);
+        selledBooksRepository = database.getRepository(SelledBooks.class);
     }
 
     public static void addUser(String username, String password, String role, String first_name, String last_name, String email, String phone) throws UsernameAlreadyExistsException {
@@ -45,8 +61,20 @@ public class UserService {
         booksRepository.insert(new PublishedBooks(username, category, title, author, number_pag, condition));
     }
 
+    public static void makeOffer(String username, String customer_username, String category, String title, String author, String number_pag, String condition){
+        booksWithOfferRepository.insert(new BooksWithOffer(username, customer_username, category, title, author, number_pag, condition));
+    }
+
     public static void deleteBook(PublishedBooks publishedBook){
         booksRepository.remove(publishedBook);
+    }
+
+    public static void deleteOffer(BooksWithOffer bookOffer){
+        booksWithOfferRepository.remove(bookOffer);
+    }
+
+    public static void sellBook(String username, String customer_username, String category, String title, String author, String number_pag, String condition){
+        selledBooksRepository.insert(new SelledBooks(username, customer_username, category, title, author, number_pag, condition));
     }
 
     public static void checkFilledInformationsPublishBook(String category, String title, String author, String number_pag, String condition) throws PublishBookException {
