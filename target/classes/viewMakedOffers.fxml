@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffb115;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.ViewMakedOffersController">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="298.0" prefHeight="112.0" prefWidth="600.0">
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="229.0" layoutX="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../FISProject/ANTICARIAT_FIS_PROJECT/ANTICARIAT_FIS_PROJECT/target/classes/images/logo.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="119.0" fitWidth="377.0" layoutX="243.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../FISProject/ANTICARIAT_FIS_PROJECT/ANTICARIAT_FIS_PROJECT/target/classes/images/books.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="offers_table" layoutY="55.0" prefHeight="242.0" prefWidth="505.0">
+         <columns>
+            <TableColumn fx:id="category_col" prefWidth="90.0" text="Category" />
+            <TableColumn fx:id="title_col" minWidth="0.0" prefWidth="124.0" text="Title" />
+            <TableColumn fx:id="author_col" prefWidth="114.0" text="Author" />
+            <TableColumn fx:id="pag_col" minWidth="6.0" prefWidth="82.0" text="No. pag" />
+            <TableColumn fx:id="condition_col" prefWidth="102.0" text="Condition" />
+         </columns>
+      </TableView>
+      <AnchorPane prefHeight="57.0" prefWidth="600.0" style="-fx-background-color: #09a1a1;">
+         <children>
+            <Label fx:id="text_label" layoutX="238.0" layoutY="15.0" text="Received Offers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="accept_button" layoutX="524.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleAccept" text="Accept" />
+      <Button fx:id="reject_button" layoutX="523.0" layoutY="195.0" mnemonicParsing="false" onAction="#handleReject" prefHeight="26.0" prefWidth="53.0" text="Reject" />
+      <Button fx:id="back_button" layoutX="24.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleBack" style="-fx-cursor: hand;" text="Back" />
+   </children>
+</AnchorPane>
