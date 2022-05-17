@@ -27,6 +27,9 @@ public class LoggedInSellerController {
     private Button LogOut_button;
 
     @FXML
+    private Button viewSolds_button;
+
+    @FXML
     private Label label_hello;
 
     @FXML
@@ -55,6 +58,14 @@ public class LoggedInSellerController {
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("viewOffers.fxml"));
         Stage window = (Stage) viewOffers_button.getScene().getWindow();
         window.setTitle("Your offers");
+        window.setScene(new Scene(root,600,400));
+    }
+
+    @FXML
+    private void handleViewSolds() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("selledBooks.fxml"));
+        Stage window = (Stage) viewOffers_button.getScene().getWindow();
+        window.setTitle("Your sold books");
         window.setScene(new Scene(root,600,400));
     }
 
