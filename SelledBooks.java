@@ -3,7 +3,7 @@ package org.loose.fis.sre.model;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.objects.Id;
 
-public class BooksWithOffer {
+public class SelledBooks {
     @Id
     private NitriteId id;
     private String username;
@@ -14,8 +14,7 @@ public class BooksWithOffer {
     private String number_pag;
     private String condition;
 
-
-    public BooksWithOffer(String username, String customer_username, String category, String title, String author, String number_pag, String condition) {
+    public SelledBooks(String username, String customer_username, String category, String title, String author, String number_pag, String condition) {
         this.username=username;
         this.customer_username=customer_username;
         this.category=category;
@@ -25,7 +24,7 @@ public class BooksWithOffer {
         this.condition=condition;
     }
 
-    public BooksWithOffer(){
+    public SelledBooks(){
     }
 
     public NitriteId getId() {
