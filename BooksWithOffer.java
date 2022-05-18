@@ -14,6 +14,7 @@ public class BooksWithOffer {
     private String number_pag;
     private String condition;
 
+
     public BooksWithOffer(String username, String customer_username, String category, String title, String author, String number_pag, String condition) {
         this.username=username;
         this.customer_username=customer_username;

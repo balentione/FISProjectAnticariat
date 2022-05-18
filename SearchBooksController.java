@@ -94,12 +94,13 @@ public class SearchBooksController {
         window.setScene(new Scene(root,600,400));
     }
 
-    //de modificat
     @FXML
     private void handleBuySelected() throws IOException{
         for(PublishedBooks publishedBooks : books_table.getSelectionModel().getSelectedItems()){
-            UserService.deleteBook(publishedBooks);
+            UserService.makeOffer(publishedBooks.getUsername(),publishedBooks.getCategory(),publishedBooks.getTitle(),publishedBooks.getAuthor(),publishedBooks.getNumber_pag(),publishedBooks.getCondition());
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Yeey, you send the offer to the owner.\nIf the owner accept it, you can view this book in your history.");
+            alert.show();
         }
-        books_table.getItems().removeAll(books_table.getSelectionModel().getSelectedItems());
     }
 }
