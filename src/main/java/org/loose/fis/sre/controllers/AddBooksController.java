@@ -60,9 +60,9 @@ public class AddBooksController {
            UserService.checkFilledInformationsPublishBook((String) category.getValue(),title_field.getText(),author_field.getText(),pag_field.getText(),(String) condition.getValue());
            UserService.addBook(User.getLast_username(), (String) category.getValue(),title_field.getText(),author_field.getText(),pag_field.getText(),(String) condition.getValue());
 
-           Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-           alert.setContentText("Book published successfully!");
-           alert.show();
+           //Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+           //alert.setContentText("Book published successfully!");
+           //alert.show();
        } catch (PublishBookException e){
            Alert alert = new Alert(Alert.AlertType.ERROR);
            alert.setContentText(e.getMessage());
