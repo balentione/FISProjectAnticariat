@@ -56,17 +56,17 @@ public class SignUpController{
             UserService.checkFilledInformationsSignUp(tf_username.getText(), tf_password.getText(), (String) role.getValue(),tf_firstname.getText(), tf_lastname.getText(),tf_email.getText(),tf_phone.getText());
             UserService.addUser(tf_username.getText(), tf_password.getText(), (String) role.getValue(),tf_firstname.getText(), tf_lastname.getText(),tf_email.getText(),tf_phone.getText());
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setContentText("Account created successfully!");
-            alert.show();
+           // Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            //alert.setContentText("Account created successfully!");
+           // alert.show();
         } catch (UsernameAlreadyExistsException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
             alert.show();
         } catch (SignUpException e){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.show();
+            //Alert alert = new Alert(Alert.AlertType.ERROR);
+            //alert.setContentText(e.getMessage());
+            //alert.show();
         }
     }
 

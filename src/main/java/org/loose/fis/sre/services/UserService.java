@@ -62,6 +62,15 @@ public class UserService {
     public static List<User> getAllUsers() {
         return userRepository.find().toList();
     }
+    public static List<PublishedBooks> getAllPublishedBooks() {
+        return booksRepository.find().toList();
+    }
+    public static List<BooksWithOffer> getAllBooksWithOffer() {
+        return booksWithOfferRepository.find().toList();
+    }
+    public static List<SelledBooks> getAllSelledBooks() {
+        return selledBooksRepository.find().toList();
+    }
 
     public static void addBook(String username, String category, String title, String author, String number_pag, String condition){
         booksRepository.insert(new PublishedBooks(username, category, title, author, number_pag, condition));
@@ -112,7 +121,7 @@ public class UserService {
             throw new SignUpException(username,password,role,first_name,last_name,email,phone);
     }
 
-    static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
