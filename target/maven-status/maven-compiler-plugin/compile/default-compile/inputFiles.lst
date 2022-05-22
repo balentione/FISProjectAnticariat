@@ -1,6 +1,21 @@
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/controllers/RegistrationController.java
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/services/FileSystemService.java
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/exceptions/UsernameAlreadyExistsException.java
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/model/User.java
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/Main.java
-/Users/gabriel-claudiuprivantu/Downloads/SimpleRegistrationExample-main-3/src/main/java/org/loose/fis/sre/services/UserService.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\ViewBooksController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\exceptions\SignUpException.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\HelloController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\SearchBooksController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\LoggedInCustomerController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\SignUpController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\model\User.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\BuyedBooksController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\exceptions\UsernameAlreadyExistsException.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\model\BooksWithOffer.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\Main.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\AddBooksController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\services\UserService.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\model\PublishedBooks.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\services\FileSystemService.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\model\SelledBooks.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\exceptions\PublishBookException.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\LoggedInSellerController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\SelledBooksController.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\exceptions\WrongCredentialsException.java
+C:\Users\alexa\Downloads\ANTICARIAT_FIS_PROJECT 3 (1)\ANTICARIAT_FIS_PROJECT\src\main\java\org\loose\fis\sre\controllers\ViewOffersController.java
